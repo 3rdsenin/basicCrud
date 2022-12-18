@@ -5,8 +5,8 @@ const userRoute = require('./user.route')
 const orderRoute = require('./order.route');
 
 
-router.all('/users', userRoute);
-router.all('/orders', orderRoute);
+router.use('/users', userRoute);
+router.use('/orders', orderRoute);
 
 
 

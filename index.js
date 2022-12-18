@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Routes
-app.all('/api/v1', router);
+app.use('/api/v1', router);
 
 
 module.exports = app;
