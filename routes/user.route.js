@@ -6,10 +6,6 @@ const userController = require('../controllers/user.controller');
 router.get('/', userController.getUser)
 
 
-//Create order
-router.post('/', userController.createUser);
-
-
 //Update order
 router.patch('/:id', userController.updateUser);
 
