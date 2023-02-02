@@ -41,9 +41,8 @@ passport.use('signup',
                     const body = req.body;
                     let user = await UserModel.create({ firstName: body.firstName, lastName: body.lastName, email, password });
                     const { password, ...others} = user._doc;
-                    const userWithoutPassword = others;
                     // delete user.password;
-                    return done(null, {user: userWithoutPassword}, { message: "Signup was successful."});
+                    return done(null, {user: others}, { message: "Signup was successful."});
                 }
             } catch(error) {
                 done(error);
