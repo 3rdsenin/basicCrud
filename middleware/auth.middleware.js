@@ -40,8 +40,8 @@ passport.use('signup',
                     //If the email does not exist, signup user.
                     const body = req.body;
                     let user = await UserModel.create({ firstName: body.firstName, lastName: body.lastName, email, password });
-                    const { password, ...others} = user._doc;
                     // delete user.password;
+                    const { password, ...others} = user._doc;
                     return done(null, {user: others}, { message: "Signup was successful."});
                 }
             } catch(error) {
